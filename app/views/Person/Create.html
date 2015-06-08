@@ -1,0 +1,35 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<header class="hero-unit" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <div class="hero-text">
+        <h1>Create Person</h1>
+        <hr>
+          <form action="/Person/Store" method="GET">
+              {{with $field := field "name" .}}
+                  <input type="text"  placeholder="Name" name="{{$field.Name}}" value="{{$field.Flash}}"/><br/>
+              {{end}}
+
+              {{with $field := field "lastname" .}}
+                  <input type="text"  placeholder="LastName" name="{{$field.Name}}" value="{{$field.Flash}}"/><br/>
+              {{end}}         
+              <input type="submit" value="Save" class="btn btn-primary">
+              <br>
+        </form>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
