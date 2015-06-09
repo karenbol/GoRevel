@@ -3,7 +3,6 @@ package controllers
 import (
    
     "github.com/revel/revel"
-     //"auction/app/models"
     "encoding/json"
     "expo/app/models"
 )
@@ -38,7 +37,7 @@ func (c Person) Add() revel.Result {
     }
 }
 
-func (c Person) Get(id int64) revel.Result {
+func (c Person) Get(id int) revel.Result {
     biditem := new(models.Person)
     err := c.Txn.SelectOne(biditem, 
         `SELECT * FROM personas WHERE id = ?`, id)
