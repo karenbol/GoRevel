@@ -1,3 +1,53 @@
+#Install Go
+
+Before you can use Revel, first need to install Go.
+
+See official Install Go at https://golang.org
+
+Ubuntu
+Install package golang
+
+
+sudo apt-get install golang
+
+###Set up your GOPATH
+
+If you did not create a GOPATH as part of installation, do so now.
+
+The GOPATH is a directory tree where all of your Go code will live. Here are the steps to do that:
+
+1-Make a directory: mkdir ~/gocode
+
+2-Tell Go to use that as your GOPATH: export GOPATH=~/gocode
+
+3-Save your GOPATH so that it will apply to all future shell sessions:
+
+echo export GOPATH=$GOPATH >> ~/.bash_profile
+
+Now your Go installation is complete.
+
+###Install git and mercurial
+Git and Mercurial are required to allow go get to clone various dependencies.
+
+Installing Git
+
+Installing Mercurial
+
+sudo apt-get install mercurial meld
+
+###Get the Revel framework
+
+To get the Revel framework, run
+
+go get github.com/revel/revel
+
+###Get and Build the Revel command line tool
+
+The revel command line tool is used to build, run, and package Revel applications.
+
+Use go get to install:
+
+go get github.com/revel/cmd/revel
 # Welcome to Revel
 
 ## Getting Started
